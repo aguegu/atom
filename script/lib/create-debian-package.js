@@ -23,10 +23,8 @@ module.exports = function(packagedAppPath) {
     arch = 'amd64';
   } else if (process.arch === 'ppc') {
     arch = 'powerpc';
-  } else if (process.arch === 'arm') {
-    arch = 'armhf';
   } else {
-    arch = process.arch;
+    arch = spawnSync('dpkg', ['--print-architecture']).stdout.toString().trim();
   }
 
   const outputDebianPackageFilePath = path.join(
