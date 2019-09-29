@@ -4,7 +4,7 @@ ARCH != uname -m
 ifeq ($(ARCH), armv7l)
 	ARCHITECTURE = arm32v7
 else ifeq ($(ARCH), aarch64)
-	ARCHITECTURE = amd64v8
+	ARCHITECTURE = arm64v8
 endif
 
 BASEIMAGE=${ARCHITECTURE}/node:dubnium-buster
